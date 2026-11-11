@@ -63,7 +63,9 @@ jobs:
         tar -xf v7.8.4.tar.gz
         mv Egaroucid-7.8.4/bin/resources lambdanative/apps/isreversi/resources
     - name: Copy patches
-      run: cp patches/*.patch lambdanative/libraries/libegaroucid
+      run: |
+        rm lambdanative/libraries/libegaroucid/*.patch
+        cp patches/*.patch lambdanative/libraries/libegaroucid
     - name: android builds
       working-directory: lambdanative
       run: |
