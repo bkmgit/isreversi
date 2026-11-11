@@ -37,7 +37,7 @@ jobs:
        echo yes | sdkmanager --sdk_root=/home/build/android-sdk "build-tools;29.0.3"
        echo yes | sdkmanager --sdk_root=/home/build/android-sdk "tools"
        echo yes | sdkmanager --sdk_root=/home/build/android-sdk "extras;android;m2repository"
-       echo yes | sdkmanager --sdk_root=/home/build/android-sdk "ndk-bundle;r28"
+       echo yes | sdkmanager --sdk_root=/home/build/android-sdk "ndk;30.0.16248370"
        echo yes | sdkmanager --sdk_root=/home/build/android-sdk "platform-tools"
        echo yes | sdkmanager --sdk_root=/home/build/android-sdk --licenses
        # https://coderwall.com/p/r09hoq/android-generate-release-debug-keystores
@@ -49,7 +49,7 @@ jobs:
        cp SETUP.template SETUP
        sed -i 's/ANDROIDAPI=21/ANDROIDAPI=28/g' SETUP
        sed -i 's|/usr/local/android-sdk-*|/home/build/android-sdk|g' SETUP
-       sed -i 's|/usr/local/android-ndk-*|/home/build/android-sdk/ndk-bundle|g' SETUP
+       sed -i 's|/usr/local/android-ndk-*|/home/build/android-sdk/ndk/30.0.16248370|g' SETUP
        cp PROFILE.template PROFILE
        sed -i 's|SYS_ANDROIDPW="yoursecrethere"|SYS_ANDROIDPW="android"|g' PROFILE
        sed -i 's|SYS_CC="gcc $SYS|SYS_CC="gcc-14 $SYS|g' targets/linux/host_linux
