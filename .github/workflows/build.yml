@@ -18,12 +18,12 @@ jobs:
     - run: cat /etc/os-release
     - name: install dependencies
       run: |
-       dnf -y install alsa-lib-devel ant autoconf automake bc cmake curl gambit-c
-       dnf -y install gcc14 gcc14-c++ git grep ImageMagick-devel java-25-openjdk-devel
-       dnf -y install libtool libXext-devel make mesa-libGL-devel
-       dnf -y install mesa-libGLU-devel netpbm-devel patch perl-FindBin
-       dnf -y install portaudio python3-sdkmanager sed tar tcl-devel texlive
-       dnf -y install which wget zip
+       dnf -y install alsa-lib-devel ant autoconf automake bc cmake curl
+       dnf -y install gambit-c gcc14 gcc14-c++ git grep ImageMagick-devel
+       dnf -y install java-25-openjdk-devel libtool libXext-devel make
+       dnf -y install mesa-libGL-devel mesa-libGLU-devel netpbm-devel patch
+       dnf -y install perl-FindBin perl-Time-Piece portaudio python3-sdkmanager
+       dnf -y install sed tar tcl-devel texlive which wget zip
     - name: Get LambdaNative
       run: |
        git clone https://github.com/bkmgit/lambdanative -b egaroucid --no-single-branch
